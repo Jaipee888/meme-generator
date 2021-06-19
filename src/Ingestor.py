@@ -4,7 +4,7 @@ from QuoteEngine.CSVIngestor import CSVIngestor
 from QuoteEngine.DocxIngestor import DocxIngestor
 from QuoteEngine.PDFIngestor import PDFIngestor
 from QuoteEngine.TextIngestor import TextIngestor
-from QuoteEngine.ingestor_Interface import IngestorInterface
+from QuoteEngine.ingestor_interface import IngestorInterface
 from QuoteEngine.quote_engine import QuoteModel
 
 

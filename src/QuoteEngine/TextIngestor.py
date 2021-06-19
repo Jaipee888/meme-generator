@@ -1,11 +1,11 @@
 from typing import List
 
-from ingestor_Interface import IngestorInterface
-from quote_engine import QuoteModel
+from .quote_engine import QuoteModel
+from .ingestor_interface import IngestorInterface
 
 
 class TextIngestor(IngestorInterface):
-    allowed_extensions = ['.txt']
+    allowed_extensions = ['txt']
 
     @classmethod
     def parse(cls, path) -> List[QuoteModel]:
@@ -18,7 +18,8 @@ class TextIngestor(IngestorInterface):
             lines = f.readlines()
             for line in lines:
                 final_text = line.split('-')
-                final_dog_text = QuoteModel(final_text[0], final_text[1].strip('\n'))
+                final_dog_text = QuoteModel(final_text[0],
+                                            final_text[1].strip('\n'))
                 dogs_txt.append(final_dog_text)
 
         f.close()

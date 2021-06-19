@@ -1,7 +1,11 @@
 import os
 import random
+import argparse
 
-# @TODO Import your Ingestor and MemeEngine classes
+# @TODO Import your Ingestor and MemeEngine classes - Done
+from QuoteEngine.quote_engine import QuoteModel
+from MemeGenerator.meme_engine import MemeEngine
+from Ingestor import Ingestor
 
 
 def generate_meme(path=None, body=None, author=None):
@@ -17,7 +21,7 @@ def generate_meme(path=None, body=None, author=None):
 
         img = random.choice(imgs)
     else:
-        img = path[0]
+        img = path
 
     if body is None:
         quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
@@ -37,12 +41,3 @@ def generate_meme(path=None, body=None, author=None):
     meme = MemeEngine('./tmp')
     path = meme.make_meme(img, quote.body, quote.author)
     return path
-
-
-if __name__ == "__main__":
-    # @TODO Use ArgumentParser to parse the following CLI arguments
-    # path - path to an image file
-    # body - quote body to add to the image
-    # author - quote author to add to the image
-    args = None
-    print(generate_meme(args.path, args.body, args.author))

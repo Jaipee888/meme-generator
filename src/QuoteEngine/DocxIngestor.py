@@ -2,12 +2,12 @@ from typing import List
 
 from docx import Document
 
-from ingestor_Interface import IngestorInterface
-from quote_engine import QuoteModel
+from .ingestor_interface import IngestorInterface
+from .quote_engine import QuoteModel
 
 
 class DocxIngestor(IngestorInterface):
-    allowed_extensions = ['.docx']
+    allowed_extensions = ['docx']
 
     @classmethod
     def parse(cls, path) -> List[QuoteModel]:
